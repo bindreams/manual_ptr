@@ -14,10 +14,10 @@
 template <class T>
 class manual_ptr {
 private:
-	std::uintptr_t ptr;
+	std::uintptr_t m_data;
 
 public:
-	explicit manual_ptr(std::nullptr_t = nullptr);
+	manual_ptr(std::nullptr_t = nullptr);
 	explicit manual_ptr(T* adopt_ptr);
 	manual_ptr(const manual_ptr& other);
 	manual_ptr(manual_ptr&& other);
@@ -36,6 +36,9 @@ public:
 	void reset(T* adopt_ptr);
 
 	T* release();
+
+	explicit operator bool() const noexcept;
+	bool empty() const noexcept;
 
 	T* get() const noexcept;
 	T* operator->() const noexcept;
