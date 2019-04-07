@@ -130,10 +130,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="manual_ptr.hpp" />
+    <ClInclude Include="zh\manual_ptr.hpp" />
+    <ClInclude Include="zh\manual_ptr\manual_ptr.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="manual_ptr.inl" />
+    <None Include="zh\manual_ptr\manual_ptr.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,6 +3,8 @@
 
 #include <stdexcept>
 
+namespace zh {
+
 template <class T, class... Args>
 manual_ptr<T> make_manual(Args&&... args) {
 	return manual_ptr<T>(new T(std::forward<Args>(args)...));
@@ -141,3 +143,5 @@ template <class T>
 bool manual_ptr<T>::has_deleter() const noexcept {
 	return m_data & std::uintptr_t(1);
 }
+
+} // namespace zh

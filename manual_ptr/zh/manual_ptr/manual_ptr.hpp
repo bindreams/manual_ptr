@@ -1,6 +1,8 @@
 #pragma once
 #include <cstdint>
 
+namespace zh {
+
 // manual_ptr is similar to shared_ptr, but the deleting responsibility must be
 // transferred manually between pointers.
 // Use this when you need shared_ptr-like behavior in perfomance-critical cases.
@@ -48,5 +50,7 @@ public:
 
 template <class T, class... Args>
 manual_ptr<T> make_manual(Args&&... args);
+
+} // namespace zh
 
 #include "manual_ptr.inl"
