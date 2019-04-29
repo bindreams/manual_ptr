@@ -41,6 +41,8 @@ template <class T>
 manual_ptr<T>& manual_ptr<T>::operator=(const manual_ptr& other) {
 	reset();
 	m_data = other.m_data & ~std::uintptr_t(1);
+
+	return *this;
 }
 
 template <class T>
@@ -48,6 +50,8 @@ manual_ptr<T>& manual_ptr<T>::operator=(manual_ptr&& other) {
 	reset();
 	m_data = std::move(other.m_data);
 	other.m_data &= ~std::uintptr_t(1);
+
+	return *this;
 }
 
 template <class T>
