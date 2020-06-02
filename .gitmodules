@@ -1,3 +1,0 @@
-[submodule "tools/cmake-scripts"]
-	path = tools/cmake-scripts
-	url = https://github.com/mpusz/cmake-scripts
